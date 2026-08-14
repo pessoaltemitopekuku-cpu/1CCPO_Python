@@ -1,0 +1,40 @@
+eng2spa = {}
+eng2spa["one"] = "uno"
+#print(eng2spa)
+
+eng2spa = {
+  "one" : "uno",
+  "two" : "dos"
+}
+#print(eng2spa)
+#print(eng2spa["two"])
+
+#print("two" in eng2spa)
+
+def order(table):
+  result = dict()
+  order = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
+  list = []
+  results = []
+  for K,V in table.items():
+    list.insert(order.index(K.lower()),K.lower())
+    results.insert(order.index(K.lower()),V)
+
+  for I,V in enumerate(list):
+    result[V] = results[I]
+  
+  return result
+
+def count(string):
+  result = dict()
+  for I in string:
+    if not I in result:
+      result[I] = 1
+    else:
+      result[I] += 1
+  return result
+
+print(order({
+  "b" : 2323,
+  "a" : 23
+}))
